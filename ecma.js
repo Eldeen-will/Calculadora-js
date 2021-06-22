@@ -48,7 +48,7 @@ equal.addEventListener('click', function(){
     };
 });
 
-back.addEventListener('click', function(){
+back.addEventListener('click', function(){  
     apagar();
 });
 
@@ -64,8 +64,14 @@ function igual(){
 };
 
 function apagar(){
-    let res = conta.innerHTML.slice(0, -1);
-    conta.innerHTML = res;
+    if(resultado.innerHTML != ''){
+        conta.innerHTML = res;
+        res = conta.innerHTML.slice(0, -1);
+    }else{
+        let res = conta.innerHTML.slice(0, -1);
+        conta.innerHTML = res;
+    }
+    return conta.innerHTML;
 };
 
 function continuar(){
@@ -80,13 +86,22 @@ function limpar(){
     conta.innerHTML = '';
 };
 
+        /* HORA */
 
 let hora = document.getElementById('hora');
-let date = new Date();
-let h = date.getHours();
-let m = date.getMinutes();
- if(m < 10){
-    hora.innerHTML = `${h}:0${m}`;
- }else{
-    hora.innerHTML = `${h}:${m}`;
- };
+let h = '';
+let m = '';
+setInterval(function(){
+    let date = new Date();
+    h = date.getHours();
+    m = date.getMinutes();
+    zero();
+},1000);
+
+function zero(){
+    if(m < 10){
+        hora.innerHTML = `${h}:0${m}`;
+    }else{
+        hora.innerHTML = `${h}:${m}`;
+    };
+};

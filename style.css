@@ -15,7 +15,7 @@ body{
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     background: rgba( 255, 255, 255, 0.40 );
     backdrop-filter: blur(20px);
-    opacity: 0.8;
+    opacity: 0.7;
     
 }
 
@@ -139,9 +139,9 @@ p:first-child{
 
 #conta{
     resize: none;
-    font-size: 32px;
+    font-size: 28px;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     background: none;
     border: none;
     outline: none;
@@ -153,8 +153,8 @@ p:first-child{
 
 #result{
     color: #fff;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 500;
     text-align: end;
     letter-spacing: 0.04em;
 }
