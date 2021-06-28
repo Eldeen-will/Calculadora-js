@@ -89,19 +89,19 @@ function limpar(){
         /* HORA */
 
 let hora = document.getElementById('hora');
-let h = '';
-let m = '';
+
 setInterval(function(){
     let date = new Date();
-    h = date.getHours();
-    m = date.getMinutes();
-    zero();
+    let h = date.getHours();
+    let m = date.getMinutes();
+    h = zero(h);
+    m = zero(m);
+    hora.innerHTML = `${h}:${m}`;
 },1000);
 
-function zero(){
-    if(m < 10){
-        hora.innerHTML = `${h}:0${m}`;
-    }else{
-        hora.innerHTML = `${h}:${m}`;
+function zero(x){
+    if(x < 10){
+        x = `0${x}`;
     };
+    return x;
 };
